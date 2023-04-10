@@ -1,10 +1,9 @@
 const nameList = ["wats", "Igor", "Fernandão Back", "Fahur", "Helena", "Jorge", "Paulo", "José"]
 
 
-const botaofil = document.getElementById("Filtrar");
-const botaoadd = document.getElementById("adicionar");
-const botaosel = document.getElementById("sel");
-const botaorel = document.getElementById("remover");
+const botaofiltrar = document.getElementById("Filtrar");
+const botaoadicionar= document.getElementById("adicionar");
+const botaoremover = document.getElementById("remover");
 const saida = document.getElementById("saida");
 const listEl = document.getElementById("list");
 const searchField = document.getElementById("searchField");
@@ -39,13 +38,13 @@ function adicionarNome(){
         if (nameList.indexOf(nome) == -1){
           
             nameList.push(nome);
-            saida.innerHTML = "Nome Inserido" + nome;
+            saida.innerHTML = "Nome Inserido: " + nome;
         } else {
-            saida.innerHTML = "nome existente"
+            saida.innerHTML = "nome existente: "
         }
     
     } else {
-        saida.innerHTML = "Insira um nome valido"
+        saida.innerHTML = "Insira um nome valido: "
     }
 
 }
@@ -66,4 +65,4 @@ function removerNome(){
     
 }
 
-botaorel.addEventListener("click",removerNome)
+botaorem.addEventListener("click",removerNome)
