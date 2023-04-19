@@ -1,23 +1,18 @@
-body{
+body {
     background: black;
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    font-family: sans-serif;
+    color: white;
+    font-family: sans-serif
 }
 
-.container {
-    width: auto;
-    margin: auto;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
+input {
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px 10px;
+    height: 45px;
 }
 
 li {
-    background: silver;
+    background: #343333;
     border-radius: 8px;
     width: 100%;
     padding: 8px 15px;

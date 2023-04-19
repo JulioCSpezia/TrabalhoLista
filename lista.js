@@ -4,10 +4,11 @@ const nameList = ["wats", "Igor", "Fernandão Back", "Fahur", "Helena", "Jorge",
 const botaofiltrar = document.getElementById("Filtrar");
 const botaoadicionar= document.getElementById("adicionar");
 const botaoremover = document.getElementById("remover");
-const saida = document.getElementById("saida");
 const listEl = document.getElementById("list");
 const searchField = document.getElementById("searchField");
+const botaoseleciona = document.getElementById("selecionar");
 
+var selecionar = 0;
 
 this.filtLista();
 
@@ -15,13 +16,18 @@ function filtLista(list = nameList) {
     listEl.innerHTML = "";
     for(let i = 0; i < list.length; i++) {
         let listItems = document.createElement("li");
+
+        if (selecionar == i){
+            listItems.className = "alert alert-success";
+        } else{
+            listItems.className = "";
+        }
         listItems.innerHTML = list[i];
         listEl.appendChild(listItems);
     }
 }
 
 function inputHandler() {
-    saida.innerHTML = ""
     const filteredList = nameList.filter(el => {
         const listItems = el.toLowerCase();
         const searchWord = searchField.value.toLowerCase();
@@ -30,7 +36,7 @@ function inputHandler() {
     filtLista(filteredList);
 }
 
-botaofil.addEventListener("click", inputHandler);
+botaofiltrar.addEventListener("click", inputHandler);
 
 function adicionarNome(){
     nome = searchField.value.toLowerCase(); 
@@ -38,31 +44,43 @@ function adicionarNome(){
         if (nameList.indexOf(nome) == -1){
           
             nameList.push(nome);
-            saida.innerHTML = "Nome Inserido: " + nome;
+            alert("nome inserido")
         } else {
-            saida.innerHTML = "nome existente: "
+            alert("nome existente")
         }
     
     } else {
-        saida.innerHTML = "Insira um nome valido: "
+        alert("nome invalido")
     }
 
 }
 
-botaoadd.addEventListener("click", adicionarNome);
+botaoadicionar.addEventListener("click", adicionarNome);
 
 
 function removerNome(){
-    nome = searchField.value.toLowerCase();
-
-    var index = nameList.indexOf(nome);
-    if (index > -1) {
-        nameList.splice(index, 1);
-        saida.innerHTML = "Nome removido: " + nome;
-      } else {
-        saida.innerHTML = 'Não foi possivel fazer a pesquisa "' + nome + '"'
-      }
+    nameList.splice(selecionar , 1);
+    alert("nome removido")
     
 }
 
-botaorem.addEventListener("click",removerNome)
+botaoremover.addEventListener("click",removerNome)
+
+function seleciona(){
+    if (nameList.length == 0) {
+        alert("Não há nomes para selecionar")      
+        return                                        
+      }
+    if (selecionar > nameList.length -2){
+        selecionar = 0
+    }
+    else{
+        selecionar++;
+    }
+    inputHandler()
+    
+
+
+    }
+
+botaoseleciona.addEventListener("click", seleciona);

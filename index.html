@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,26 +7,28 @@
     <title>Trabalho lista</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body class="py-5">
     <div class="container px-4 formBody">
         <div class="input-group-text mb-3">
-            <span class="input-group-text" >insira um nome :</span>
-            <input type="text" id="searchField" class="form-control" placeholder="Digite aqui">
+            <span class="input-group-text" >Filtre os nomes:</span>
+            <input type="text" id="searchField" class="form-control" placeholder="Pesquise">
         </div>
-    
-        <pre class="paragraph text-center text-dark" id="saida"></pre>
+                
         <ul id="list" class="list-group list-group-flush">
-            <input class="form-check-i put" type="checkbox">
+            <input class="form-check-input" type="checkbox">
         </ul>
-     <div class="botoes">
-        <button id="adicionar" class="btn btn-outline-primary">adicionar</button>
-        <button id="remover" class="btn btn-outline-primary">remover</button>
-        <button id="Filtrar" class="btn btn-outline-primary">filtrar</button>
-     </div>   
+        <div class="botoes">
+            <button id="adicionar" class="btn btn-outline-primary">adicionar</button>
+            <button id="selecionar" class="btn btn-dark">selecionar</button>
+            <button id="remover" class="btn btn-outline-primary">remover</button>
+            <button id="Filtrar" class="btn btn-outline-primary">filtrar</button>
+         </div> 
+
 
         <div class="container text-center footer">
-            <p> &copy;by Julio C.Spezia.2023 </p>
+            <p> &copy;Tutti i diritti riservati. Julio Cesar Spezia</p>
         </div>
     </div>
     
@@ -35,4 +36,4 @@
     <script src="lista.js"></script>
     
 </body>
-</html>  
+</html>
